@@ -1,63 +1,91 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ContactModal from "@/components/ContactModal";
 
 export default function Termos() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      <Navbar onOpenModal={() => setIsModalOpen(true)} />
+    <div className="min-h-screen bg-slate-50 py-12 px-6 lg:px-8 font-sans text-slate-700">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+        
+        {/* Cabeçalho */}
+        <div className="bg-slate-800 px-8 py-10 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-white/70 hover:text-white mb-6 text-sm font-bold transition-colors"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Voltar ao Início
+          </Link>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Termos de Uso</h1>
+          <p className="text-white/60">Última atualização: 29 de Janeiro de 2026</p>
+        </div>
 
-      <main className="flex-grow pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
-            Termos e Condições de Uso
-          </h1>
+        {/* Conteúdo */}
+        <div className="p-8 md:p-12 space-y-8">
           
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 prose prose-slate max-w-none text-slate-600">
-            <p className="text-sm text-slate-400 mb-6">Última atualização: {new Date().toLocaleDateString()}</p>
-
-            <h3 className="text-xl font-bold text-slate-800 mt-6 mb-3">1. Aceitação dos Termos</h3>
-            <p className="mb-4">
-              Ao acessar e usar o site e os produtos Cuidar+, você aceita e concorda em estar vinculado aos termos e disposições deste acordo.
-            </p>
-
-            <h3 className="text-xl font-bold text-slate-800 mt-6 mb-3">2. Uso do Dispositivo</h3>
-            <p className="mb-4">
-              O dispositivo Cuidar+ é uma ferramenta de auxílio ao bem-estar e monitoramento. <strong>Ele não substitui diagnósticos médicos profissionais.</strong> Em caso de sintomas graves ou emergências, procure imediatamente um médico ou serviço de urgência.
-            </p>
-
-            <h3 className="text-xl font-bold text-slate-800 mt-6 mb-3">3. Privacidade de Dados</h3>
-            <p className="mb-4">
-              Nós levamos sua privacidade a sério. Os dados coletados pelo dispositivo são utilizados exclusivamente para gerar seu histórico no aplicativo e não são vendidos a terceiros. Para mais detalhes, consulte nossa Política de Privacidade.
-            </p>
-
-            <h3 className="text-xl font-bold text-slate-800 mt-6 mb-3">4. Garantia e Devoluções</h3>
-            <p className="mb-4">
-              O hardware possui garantia de 1 ano contra defeitos de fabricação. Devoluções por arrependimento podem ser feitas em até 7 dias após o recebimento, desde que o produto esteja na embalagem original e sem uso.
-            </p>
-
-            <h3 className="text-xl font-bold text-slate-800 mt-6 mb-3">5. Alterações nos Termos</h3>
-            <p>
-              Reservamo-nos o direito de modificar estes termos a qualquer momento. O uso contínuo do serviço após tais alterações constitui sua aceitação dos novos termos.
+          {/* Aviso Importante de Saúde */}
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+            <h3 className="text-red-800 font-bold text-lg mb-2 flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              Isenção de Responsabilidade Médica
+            </h3>
+            <p className="text-red-700 text-sm leading-relaxed">
+              O <strong>Kit Cuidar+</strong> e seu aplicativo são ferramentas de auxílio ao monitoramento e bem-estar. <strong>Eles NÃO substituem o diagnóstico, aconselhamento ou tratamento médico profissional.</strong> Em caso de emergência ou sintomas graves, procure imediatamente um serviço de urgência, independentemente das leituras do dispositivo.
             </p>
           </div>
-          
-          <div className="mt-8">
-            <Link href="/" className="text-[#1FA0C9] font-bold hover:underline flex items-center gap-2">
-              <span>←</span> Voltar para a Página Inicial
-            </Link>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Aceitação dos Termos</h2>
+            <p className="leading-relaxed">
+              Ao adquirir, acessar ou utilizar o dispositivo Cuidar+ e nosso software, você concorda em cumprir estes Termos de Uso e nossa Política de Privacidade. Se você não concordar com qualquer parte destes termos, não deverá utilizar nossos serviços.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Uso do Equipamento</h2>
+            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+              <li>Você é responsável por manter o dispositivo carregado e em bom estado de conservação.</li>
+              <li>Não tente desmontar, modificar ou reparar o hardware por conta própria; isso anulará a garantia.</li>
+              <li>O dispositivo deve ser usado conforme as instruções do Manual do Usuário para garantir a precisão das leituras.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Propriedade Intelectual</h2>
+            <p className="leading-relaxed">
+              Todo o conteúdo, design, logotipos, software e firmware associados ao Projeto Cuidar+ são propriedade exclusiva da nossa equipe de desenvolvimento e estão protegidos pelas leis de direitos autorais e propriedade intelectual do Brasil.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Limitação de Responsabilidade</h2>
+            <p className="leading-relaxed">
+              Não nos responsabilizamos por:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mt-3 text-slate-600">
+              <li>Falhas de conexão Bluetooth decorrentes de incompatibilidade do seu smartphone.</li>
+              <li>Interrupções no serviço devido a manutenções programadas ou força maior.</li>
+              <li>Decisões de saúde tomadas exclusivamente com base nos dados do aplicativo sem consulta médica.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Alterações</h2>
+            <p className="leading-relaxed">
+              Reservamo-nos o direito de modificar estes termos a qualquer momento. Notificaremos sobre alterações significativas através do aplicativo ou por e-mail.
+            </p>
+          </section>
+
+          <div className="pt-8 border-t border-slate-200 text-center">
+            <p className="text-sm text-slate-500">
+              Copyright © 2026 Projeto Cuidar+. Todos os direitos reservados.
+            </p>
           </div>
         </div>
-      </main>
-
-      <Footer />
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </div>
     </div>
   );
 }
