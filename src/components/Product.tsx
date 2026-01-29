@@ -135,7 +135,7 @@ export default function Product({ onOpenModal }: ProductProps) {
           </div>
           
           <p className="absolute bottom-8 text-white/40 text-xs uppercase tracking-widest">
-            Design Confidencial
+            Design Disponibilizado em Breve
           </p>
         </div>
       </div>
