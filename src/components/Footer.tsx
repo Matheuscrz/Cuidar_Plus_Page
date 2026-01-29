@@ -16,9 +16,24 @@ export default function Footer() {
           <p className="text-sm max-w-sm leading-relaxed">
             Desenvolvemos tecnologia acessível para monitorização de saúde e bem-estar. Cuidado e segurança na palma da sua mão.
           </p>
-          <div className="pt-4">
-             <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Iniciativa</div>
-             <div className="text-slate-300 font-semibold">Universidade Federal de Sergipe</div>
+          
+          <div className="pt-6">
+             <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Iniciativa</div>
+             {/* Container branco adicionado para garantir contraste das logos azuis */}
+             <div className="bg-white p-3 rounded-lg inline-flex items-center gap-6 w-fit shadow-sm">
+               <img 
+                 src="/ufs.png" 
+                 alt="Universidade Federal de Sergipe" 
+                 className="h-10 w-auto object-contain"
+               />
+               {/* Separador visual opcional para organizar as marcas */}
+               <div className="w-px h-8 bg-slate-200"></div>
+               <img 
+                 src="/dcomp.png" 
+                 alt="Departamento de Computação" 
+                 className="h-10 w-auto object-contain"
+               />
+             </div>
           </div>
         </div>
         
