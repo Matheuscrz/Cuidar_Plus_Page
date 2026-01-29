@@ -15,7 +15,7 @@ export default function Team() {
     "Debora Nascimento",
     "Edward Moreno",
     "Giovanny Lucero",
-    "Michel dos Santos Soares",
+    "Michel Soares",
   ];
 
   return (
