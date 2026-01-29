@@ -11,10 +11,11 @@ export default function Team() {
   ];
 
   const consultants = [
-    "Edward Moreno",
-    "Debora Nascimento",
-    "Giovanny Lucero",
     "Adicinéia Oliveira",
+    "Debora Nascimento",
+    "Edward Moreno",
+    "Giovanny Lucero",
+    "Michel dos Santos Soares",
   ];
 
   return (
