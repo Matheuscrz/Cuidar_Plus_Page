@@ -15,7 +15,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
             Tecnologia que cuida de{" "}
-            <span className="text-[#1FA0C9]">quem você ama</span>.
+            <span className="text-[#1FA0C9]">quem você ama</span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
             Monitoramento inteligente de sinais vitais integrado ao seu
