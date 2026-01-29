@@ -65,7 +65,8 @@ export default function Team() {
                 key={name}
                 className="flex items-center gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#1FA0C9]/10 text-[#1FA0C9] flex items-center justify-center font-bold text-lg">
+                {/* Alteração: Gradiente em vez de imagem partida */}
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1FA0C9] to-[#1689ad] text-white flex items-center justify-center font-bold text-lg shadow-md">
                   {name.charAt(0)}
                 </div>
                 <div className="text-left">

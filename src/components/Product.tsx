@@ -1,12 +1,24 @@
+"use client";
+
+import React from "react";
+
 interface ProductProps {
   onOpenModal: () => void;
 }
 
 export default function Product({ onOpenModal }: ProductProps) {
+  // Links reais restaurados
   const manualLink =
     "https://drive.google.com/file/d/1D0Wm7kH5oOYyPB80er8ditt0ZQAyp97T/view?usp=sharing";
   const specsLink =
     "https://drive.google.com/file/d/1NdmEZr7QZqt_orehjY4vk1pFyPHhCeAX/view?usp=sharing";
+
+  // Função para simular o download sem sair da página
+  const handleDemoLink = (e: React.MouseEvent<HTMLAnchorElement>, label: string) => {
+    e.preventDefault(); // Impede de abrir a aba real do Google Drive
+    alert(`[DEMO] O link para o ${label} funciona, mas foi bloqueado para a apresentação.`);
+    // Se quiseres que abra mesmo, comenta a linha do e.preventDefault() acima
+  };
 
   return (
     <section
@@ -26,7 +38,7 @@ export default function Product({ onOpenModal }: ProductProps) {
             Leve o cuidado para casa.
           </h2>
           <p className="text-white/90 text-lg mb-8 leading-relaxed">
-            O Kit Cuidar+ inclui o <strong>dispositivo de monitorização</strong>{" "}
+            O Kit Cuidar+ inclui o <strong>dispositivo de monitoramento</strong>{" "}
             inteligente e acesso vitalício à aplicação móvel Premium. Segurança
             e autonomia em um só lugar.
           </p>
@@ -55,6 +67,7 @@ export default function Product({ onOpenModal }: ProductProps) {
             <div className="flex gap-2">
               <a
                 href={manualLink}
+                onClick={(e) => handleDemoLink(e, "Manual do Usuário")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-4 bg-[#1FA0C9] border border-white/30 text-white font-bold rounded-xl hover:bg-[#1689ad] hover:border-white/50 transition-colors flex items-center justify-center gap-2"
@@ -77,6 +90,7 @@ export default function Product({ onOpenModal }: ProductProps) {
               </a>
               <a
                 href={specsLink}
+                onClick={(e) => handleDemoLink(e, "Especificações Técnicas")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-4 bg-[#1FA0C9] border border-white/30 text-white font-bold rounded-xl hover:bg-[#1689ad] hover:border-white/50 transition-colors flex items-center justify-center gap-2"
@@ -101,19 +115,28 @@ export default function Product({ onOpenModal }: ProductProps) {
           </div>
         </div>
 
-        <div className="relative h-[450px] w-full bg-white/10 rounded-3xl backdrop-blur-sm border border-white/20 flex items-center justify-center p-8 shadow-2xl">
-          <div className="text-center w-full">
-            <p className="text-white/60 text-sm mb-6 tracking-widest uppercase">
-              Visualização do Hardware
-            </p>
-            <div className="w-full h-64 flex items-center justify-center">
-              <span className="text-white/60 text-lg italic">
-                Imagem do hardware em breve
-              </span>
+        {/* Visual "Pro" do Hardware (Melhorado) */}
+        <div className="relative h-[450px] w-full bg-white/10 rounded-3xl backdrop-blur-md border border-white/20 flex flex-col items-center justify-center p-8 shadow-2xl overflow-hidden group">
+          {/* Brilho no hover */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          
+          <div className="relative z-10 flex flex-col items-center">
+            {/* Ícone pulsante representando o hardware */}
+            <div className="w-32 h-32 rounded-full bg-white/20 flex items-center justify-center mb-6 animate-pulse">
+              <svg className="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
             </div>
-            <p className="mt-8 font-bold text-3xl">Kit Cuidar+</p>
-            <p className="text-white/70 text-sm">Monitor de Sinais Vitais</p>
+            
+            <p className="font-bold text-3xl text-white mb-2">Kit Cuidar+</p>
+            <div className="px-4 py-1 bg-white/20 rounded-full text-xs font-bold text-white uppercase tracking-widest border border-white/10">
+              Protótipo v1.0
+            </div>
           </div>
+          
+          <p className="absolute bottom-8 text-white/40 text-xs uppercase tracking-widest">
+            Design Confidencial
+          </p>
         </div>
       </div>
     </section>

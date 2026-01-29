@@ -18,8 +18,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
             <span className="text-[#1FA0C9]">quem você ama</span>.
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-            Monitorização inteligente de sinais vitais integrada ao seu
-            telemóvel. Segurança para os pacientes e tranquilidade para a
+            Monitoramento inteligente de sinais vitais integrado ao seu
+            celular. Segurança para os pacientes e tranquilidade para a
             família.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
